@@ -5,4 +5,6 @@ Origins: The origins of the project came about when I was trying to debug some s
 
 Game plan: My first step was to create a c project in code blocks. This project is probably going to go through hell as my testing dummy but as long as the singularity doesn't occur in my life time, I think I'll be ok.
 
-The next step is to figure out how I should write this code. My initial thought was to simply write a powershell script. But an I/O file might be a better choice. Since the cbp files are written in xml, I could use a python library or something to write this function. I'm not sure yet, but I'll defiantly think about it over lunch
+The next step is to figure out how I should write this code. My initial thought was to simply write a powershell script. But an I/O file might be a better choice. Since the cbp files are written in xml, I could use a python library or something to write this function. I'm not sure yet, but I'll defiantly think about it over lunch.
+
+I've decided my best strat is to plan a flowchart out. I'll but it on git once I've completely worked out how to use lucid chart. I'll work on it tonight I think
