@@ -9,4 +9,6 @@ The next step is to figure out how I should write this code. My initial thought 
 
 I've decided my best strats is to plan a flowchart out. I'll but it on git once I've completely worked out how to use lucid chart. I'll work on it tonight I think.
 
-So I didn't work on the other night like I though, but, did do some research on libraries for python so I've decided that the best chance for me to get this script working is to use Python, along with OS and XML modules. I'll continue writing the flowchart
+So I didn't work on the other night like I though, but, did do some research on libraries for python so I've decided that the best chance for me to get this script working is to use Python, along with OS and XML modules. I'll continue writing the flowchart.
+
+Finished the flowchart. Started to work on the python file but i'm starting to get a head ache. I'll do some more work later
