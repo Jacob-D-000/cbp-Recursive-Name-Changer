@@ -20,7 +20,7 @@ def cdpwd():
     # try to get he user to insert a path if it exists
     while convar == 0:
         try:
-            print(f"The current working directory is {curdir}. What is the relative path of the file you want to change(it must stat with a '\'?")
+            print(f"The current working directory is {curdir}. What is the relative path of the file you want to change(it must stat with a '\\')?")
             # ask for input
             relpath = input()
             # cat the pwd and relative path to form new working path
@@ -32,11 +32,24 @@ def cdpwd():
         except:
             print("This path doesn't exist please try again.")
             convar = 0
+    return truepath
 
-        
 
 def main():
-    cdpwd()
+    truepath = cdpwd()
+    binpath = truepath + "\\bin"
+    objpath = truepath + "\\obj"
+    try:
+        shutil.rmtree(binpath)
+    except:
+        print("bin does not exist")
+    try:
+        shutil.rmtree(objpath)
+    except:
+        print("obj does not exist")
     
+
+
+
 
 main()
