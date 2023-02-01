@@ -8,6 +8,7 @@ Purpose: To change code blocks project files so I don't have to constantly chang
 import os
 import xml
 import shutil
+import glob
 
 # Find the proper file location
 
@@ -34,11 +35,14 @@ def cdpwd():
             convar = 0
     return truepath
 
+def globwc(pattern):
+    files = glob.glob(pattern)
+    return files
 
-def main():
-    truepath = cdpwd()
+def deleter(truepath):
     binpath = truepath + "\\bin"
     objpath = truepath + "\\obj"
+
     try:
         shutil.rmtree(binpath)
     except:
@@ -47,6 +51,31 @@ def main():
         shutil.rmtree(objpath)
     except:
         print("obj does not exist")
+    try:
+        layout = globwc("*.layout")
+        i = 0
+        for i in layout:
+            layoutstr = "\\"
+            layoutstr += i
+            layoutpath = truepath + layoutstr
+            os.remove(layoutpath)
+    except:
+        print(".layout file does not exist")
+    try:
+        depend = globwc("*.layout")
+        i = 0
+        for i in depend:
+            dependstr = "\\"
+            dependstr += i
+            dependpath = truepath + dependstr
+            os.remove(dependpath)
+    except:
+        print(".depend does not exist")
+
+def main():
+    truepath = cdpwd()
+    deleter(truepath)
+
     
 
 
