@@ -35,10 +35,12 @@ def cdpwd():
             convar = 0
     return truepath
 
+# define function to get a list of items in a given area from regex strings
 def globwc(pattern):
     files = glob.glob(pattern)
     return files
 
+# define the function to delete all unsseacry contents from a given project folder (working folder)
 def deleter(truepath):
     binpath = truepath + "\\bin"
     objpath = truepath + "\\obj"
@@ -71,6 +73,19 @@ def deleter(truepath):
             os.remove(dependpath)
     except:
         print(".depend does not exist")
+
+def fileio():
+    pattern = "*.cbp"
+    cbplst = globwc(pattern)
+    # open cbp file
+    redcbp =  open(cbplst[0], "r+", encoding="utf-8")
+    # call all options files I want to change.
+    optpath1 = "<Option output='bin/Debug/ps1RW-' prefix_auto='1' extension_auto='1' />"
+    while ()
+
+    redcbp.close
+
+
 
 def main():
     truepath = cdpwd()

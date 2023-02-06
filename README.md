@@ -20,3 +20,5 @@ After reading through this article: https://pynative.com/python-delete-files-and
 I can delete folders!!!!!!! This will probably bite me in the ass in the future. But small victories. Small victories...
 
 So I can't use wildcard like I want so I'm going to implement the glob library. It's not fun to work with, but I got glob to work. I have finished the easier bit right now. The next major step will be to parse and edit the xml, which wil be new to me. I like what I have so far though.
+
+So here's am interesting pickle. How am I going to change the file? My initial idea was to only read the lines I want with a while loop but I doubt that would actually work. I mean there are plenty of methods I could use, but I'm not  sure what the best would be. I have to think about. Probably shouldn't be doing this during Sharla's class, but there are worse thing's I could do in her class.
