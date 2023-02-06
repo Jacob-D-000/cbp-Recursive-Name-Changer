@@ -6,9 +6,9 @@ filename: cbpRecursive.py
 Purpose: To change code blocks project files so I don't have to constantly change them manually 
 """
 import os
-import xml
 import shutil
 import glob
+import re
 
 # Find the proper file location
 
@@ -40,7 +40,7 @@ def globwc(pattern):
     files = glob.glob(pattern)
     return files
 
-# define the function to delete all unsseacry contents from a given project folder (working folder)
+# define the function to delete all contents from a given project folder (working folder) that I don't need
 def deleter(truepath):
     binpath = truepath + "\\bin"
     objpath = truepath + "\\obj"
@@ -74,26 +74,25 @@ def deleter(truepath):
     except:
         print(".depend does not exist")
 
-def fileio():
+def fileio(old, new):
     pattern = "*.cbp"
     cbplst = globwc(pattern)
     # open cbp file
-    redcbp =  open(cbplst[0], "r+", encoding="utf-8")
-    # call all options files I want to change.
-    optpath1 = "<Option output='bin/Debug/ps1RW-' prefix_auto='1' extension_auto='1' />"
-    while ()
-
+    redcbp =  open(cbplst[0], "r", encoding="utf-8")
+    cbpfile = redcbp.read()
     redcbp.close
-
-
-
-def main():
-    truepath = cdpwd()
-    deleter(truepath)
-
+    cbpfile = re.sub(old, new, cbpfile) 
+    redcbp = open(cbplst[0], "w", encoding="utf-8")
+    redcbp.write(cbpfile)
+    redcbp.close
     
 
-
-
+def main():
+    # Get the name of cbp previously
+    oldproname = input("What was the name of your codeblock project originally:")
+    newproname = input("What is the current name of the project:")
+    truepath = cdpwd()
+    deleter(truepath)
+    fileio(oldproname, newproname)
 
 main()
